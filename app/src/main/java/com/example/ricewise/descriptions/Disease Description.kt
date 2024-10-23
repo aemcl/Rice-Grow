@@ -1,5 +1,6 @@
-package com.example.ricewise.pest
+package com.example.ricewise.descriptions
 
+import androidx.annotation.DrawableRes
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
@@ -24,10 +25,14 @@ import androidx.compose.ui.text.font.FontStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.example.ricewise.R
 
 @Composable
-fun Scirpophaga(){
+fun DiseaseDescription(
+    diseaseName: String,
+    diseaseDescription: String,
+    @DrawableRes diseaseImage: Int,
+    treatment: String
+){
     Box(modifier = Modifier
         .fillMaxSize()
         .background(Color(0xFFF5F5DC)))
@@ -46,8 +51,9 @@ fun Scirpophaga(){
                 .padding(top = 50.dp)
             // .clip(RoundedCornerShape(50.dp))
         ) {
+
             Image(
-                painter = painterResource(id = R.drawable.blackrice),
+                painter = painterResource(diseaseImage),
                 contentDescription = "Black Rice",
                 contentScale = ContentScale.Crop,
                 modifier = Modifier.fillMaxSize()
@@ -55,7 +61,7 @@ fun Scirpophaga(){
         }
 
         Text(
-            text = "Black Rice",
+            text = diseaseName,
             fontSize = 38.sp,
             fontWeight = FontWeight.Bold,
             fontStyle = FontStyle.Italic,
@@ -65,11 +71,10 @@ fun Scirpophaga(){
         Spacer(modifier = Modifier.height(4.dp))
 
         Text(
-            text = "Black rice or forbidden rice is a whole grain rice variety " +
-                    "known for its deep color and high nutritional value. It's rich in antioxidants, " +
-                    "particularly anthocyanins, and has a slightly sweet, nutty flavor.",
+            text = diseaseDescription ,
             fontSize = 20.sp,
             fontWeight = FontWeight.Light,
+            color = Color.Gray,
             modifier = Modifier.padding(start = 10.dp, end = 10.dp)
         )
 
@@ -87,23 +92,15 @@ fun Scirpophaga(){
             Spacer(modifier = Modifier.height(12.dp))
 
             Text(
-                text = "PLANTING MONTH:", fontWeight = FontWeight.Normal, fontStyle = FontStyle.Italic, fontSize = 18.sp
-            )
-
-            Text(
-                text = "May" +"\n" + "June"+ "\n" +"July",
-                fontWeight = FontWeight.Light,
-                fontSize = 18.sp
+                text = "HOW TO MANAGE:", fontWeight = FontWeight.Normal, fontStyle = FontStyle.Italic, fontSize = 18.sp
             )
 
             Spacer(modifier = Modifier.height(20.dp))
 
             Text(
-                text = "HARVESTING MONTH:", fontWeight = FontWeight.Normal, fontStyle = FontStyle.Italic, fontSize = 18.sp
-            )
-
-            Text(
-                text = "Around 3 to 4 months (Between September and December)",fontWeight = FontWeight.Light, fontSize = 18.sp
+                text = treatment,
+                fontWeight = FontWeight.Light,
+                fontSize = 18.sp
             )
         }
     }

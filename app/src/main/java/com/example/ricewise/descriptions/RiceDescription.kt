@@ -1,5 +1,6 @@
-package com.example.ricewise.pest
+package com.example.ricewise.descriptions
 
+import androidx.annotation.DrawableRes
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
@@ -24,10 +25,16 @@ import androidx.compose.ui.text.font.FontStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.example.ricewise.R
 
 @Composable
-fun Adult(){
+fun RiceDescription(
+    riceName: String,
+    riceDescription: String,
+    @DrawableRes riceImage: Int,
+    plantingMonth: String,
+    harvestingMonth: String)
+{
+
     Box(modifier = Modifier
         .fillMaxSize()
         .background(Color(0xFFF5F5DC)))
@@ -46,8 +53,9 @@ fun Adult(){
                 .padding(top = 50.dp)
             // .clip(RoundedCornerShape(50.dp))
         ) {
+
             Image(
-                painter = painterResource(id = R.drawable.blackrice),
+                painter = painterResource(riceImage),
                 contentDescription = "Black Rice",
                 contentScale = ContentScale.Crop,
                 modifier = Modifier.fillMaxSize()
@@ -55,7 +63,7 @@ fun Adult(){
         }
 
         Text(
-            text = "Black Rice",
+            text = riceName,
             fontSize = 38.sp,
             fontWeight = FontWeight.Bold,
             fontStyle = FontStyle.Italic,
@@ -65,11 +73,10 @@ fun Adult(){
         Spacer(modifier = Modifier.height(4.dp))
 
         Text(
-            text = "Black rice or forbidden rice is a whole grain rice variety " +
-                    "known for its deep color and high nutritional value. It's rich in antioxidants, " +
-                    "particularly anthocyanins, and has a slightly sweet, nutty flavor.",
+            text = riceDescription ,
             fontSize = 20.sp,
             fontWeight = FontWeight.Light,
+            color = Color.Gray,
             modifier = Modifier.padding(start = 10.dp, end = 10.dp)
         )
 
@@ -91,7 +98,7 @@ fun Adult(){
             )
 
             Text(
-                text = "May" +"\n" + "June"+ "\n" +"July",
+                text = plantingMonth,
                 fontWeight = FontWeight.Light,
                 fontSize = 18.sp
             )
@@ -103,7 +110,7 @@ fun Adult(){
             )
 
             Text(
-                text = "Around 3 to 4 months (Between September and December)",fontWeight = FontWeight.Light, fontSize = 18.sp
+                text = harvestingMonth,fontWeight = FontWeight.Light, fontSize = 18.sp
             )
         }
     }

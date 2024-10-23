@@ -32,86 +32,18 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import com.example.ricewise.R
+import com.example.ricewise.descriptions.RiceDescription
 
 @Composable
 
 fun Kasolid() {
-
-    Box(modifier = Modifier
-        .fillMaxSize()
-        .background(Color(0xFFF5F5DC)))
-
-    Column(
-        modifier = Modifier.fillMaxSize(),
-        verticalArrangement = Arrangement.Top,
-        horizontalAlignment = Alignment.Start
-    ) {
-        OutlinedCard(
-            border = BorderStroke(5.dp, Color.White),
-            colors = CardDefaults.cardColors(containerColor = Color(0xFFEBDA98)),
-            modifier = Modifier
-                .height(400.dp)
-                .fillMaxWidth()
-                .padding(top = 50.dp)
-            // .clip(RoundedCornerShape(50.dp))
-        ) {
-            Image(
-                painter = painterResource(id = R.drawable.kasolid),
-                contentDescription = "Black Rice",
-                contentScale = ContentScale.Crop,
-                modifier = Modifier.fillMaxSize()
-            )
-        }
-
-        Text(
-            text = "Kasolid (11026)",
-            fontSize = 38.sp,
-            fontWeight = FontWeight.Bold,
-            fontStyle = FontStyle.Italic,
-            modifier = Modifier.padding(start = 10.dp,top = 20.dp, bottom = 10.dp)
-        )
-
-        Spacer(modifier = Modifier.height(4.dp))
-
-        Text(
-            text = "Kasolid is a variety of rice seed known for its high yield and adaptability " +
-                    "to various growing conditions. It's often used in breeding programs due " +
-                    "to its desirable traits, such as disease resistance and grain quality. ",
-            fontSize = 20.sp,
-            fontWeight = FontWeight.Light,
-            modifier = Modifier.padding(start = 10.dp, end = 10.dp)
-        )
-
-        Spacer(modifier = Modifier.height(25.dp))
-
-        Column(
-            modifier = Modifier
-                .fillMaxSize()
-                .background(Color(0xFFF5F5DC))
-                .padding(start = 10.dp),
-            verticalArrangement = Arrangement.Top,
-            horizontalAlignment = Alignment.Start
-        ) {
-
-            Spacer(modifier = Modifier.height(12.dp))
-
-            Text(
-                text = "PLANTING MONTH:", fontWeight = FontWeight.Normal, fontStyle = FontStyle.Italic, fontSize = 18.sp
-            )
-
-            Text(
-                text = "May and"+"\n" + "August",fontWeight = FontWeight.Light, fontSize = 18.sp
-            )
-
-            Spacer(modifier = Modifier.height(20.dp))
-
-            Text(
-                text = "HARVESTING MONTH:", fontWeight = FontWeight.Normal, fontStyle = FontStyle.Italic, fontSize = 18.sp
-            )
-
-            Text(
-                text = "Around 3 to 4 Months (Between September & December)",fontWeight = FontWeight.Light, fontSize = 18.sp
-            )
-        }
-    }
+    RiceDescription(
+        riceName = "Kasolid (11026)",
+        riceDescription = "Kasolid (11026) is a variety of rice seed known for its high yield" +
+                " and adaptability to various growing conditions. It's often used in breeding " +
+                "programs due to its desirable traits, such as disease resistance and grain quality." ,
+        riceImage = R.drawable.kasolid,
+        plantingMonth = "May\nJune\nJuly\nAugust",
+        harvestingMonth = "Around 3 to 4 Months (Between September & December)"
+    )
 }

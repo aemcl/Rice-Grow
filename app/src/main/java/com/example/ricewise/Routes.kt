@@ -8,8 +8,7 @@ object Routes {
     val listfertilizer = "list of fertilizer"
     val listpest = "list of pest"
     val listdiseases = "list of diseases"
-    val fertInfo = "Fertilizer Info"
-    val diseaseInfo = "Disease Info"
+    val camera = "Camera Identifier"
 
     //Rice Package
     var blackrice = "Black Rice Description"
@@ -18,10 +17,10 @@ object Routes {
     var dinorado = "Dinorado"
 
     //Pest Package
-    var ricestemborer = "ricestemborer"
-    var scirpophaga = "scirpophaga"
-    var adult = "adult"
+    var greenleafhoppers = "greenleafhoppers"
+    var ricebug = "ricebug"
     var caseworm = "caseworm"
+    var ricemealy = "ricemealy"
 
     //Disease Package
     var whitehead = "whitehead"
@@ -33,8 +32,5 @@ object Routes {
     var fertOne = "Fertilizer One"
     var fertTwo = "Fertilizer Two"
     var fertThree = "Fertilizer Three"
-    var fertFour = "Fertilizer Four"
-    var fertFive = "Fertilizer Five"
-    var fertSix = "Fertilizer Six"
 
 }
